@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   app: {
 
     head: {
-      title: "university Project",
+      title: "University Project",
 
       htmlAttrs: {
         lang: "en"
