@@ -1,5 +1,5 @@
 <template>
-  <div class="py-3 flex flex-col gap-2">
+  <div class="flex flex-col gap-2 py-3">
     <musicCard v-for="music in musics" :artist="music.artist" :artwork="music.artwork" :title="music.title"
       :url="music.url" :id="Number(music.id)" />
   </div>

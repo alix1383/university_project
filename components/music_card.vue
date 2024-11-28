@@ -1,16 +1,16 @@
 <template>
   <div
-    class="h-24 rounded-3xl px-4 justify-start items-center hover:shadow-none transition-all shadow-md bg-base-100 w-full flex ">
-    <img :src="artwork" class="h-14 w-14 rounded-full object-cover" alt="">
+    class="rounded-3xl hover:shadow-none bg-base-100 flex items-center justify-start w-full h-24 px-4 transition-all shadow-md">
+    <img :src="artwork" class="h-14 w-14 object-cover rounded-full" alt="">
 
-    <div class="flex  flex-col ml-4">
+    <div class="flex flex-col ml-4">
       <div>
-        <div class="font-bold text-2xl">{{ title }}</div>
+        <div class="text-2xl font-bold">{{ title }}</div>
         <div>{{ artist }}</div>
       </div>
     </div>
 
-    <div class="ml-auto flex items-center">
+    <div class="flex items-center ml-auto">
 
       <button @click="() => { musicStore.playing = true; musicStore.changeMusic(id); musicStore.playMusic() }"
         v-if="id != Number(musicStore.playingNow.id) || musicStore.playing == false" class="btn btn-circle btn-outline">

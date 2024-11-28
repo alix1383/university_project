@@ -19,7 +19,5 @@
 
 <script lang="ts" setup>
 import AppHeader from "@/components/header/index.vue";
-import Navbar from "~/components/navbar.vue";
-import Player from "~/components/player.vue";
-
+import Navbar from "@/components/navbar/navbar.vue";
 </script>

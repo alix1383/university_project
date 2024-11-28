@@ -13,8 +13,8 @@
 </template>
 
 <script lang="ts" setup>
-import MoonIcon from './icons/moon.vue';
-import SunIcon from './icons/sun.vue';
+import MoonIcon from '@/components/icons/moon.vue';
+import SunIcon from '@/components/icons/sun.vue';
 
 
 const darkMode = ref<'fantasy' | 'coffee'>('fantasy');

@@ -1,31 +1,31 @@
 <template>
 
-  <nav :class="[musicStore.playing ? 'bottom-0' : '-bottom-28']"
-    class="flex basis-1/3 items-center justify-between fixed pl-5 pr-28 h-28 rounded-t-3xl mx-3 inset-x-0 backdrop-brightness-95 backdrop-blur-2xl  transition-all duration-500">
+  <nav :class="[musicStore.playing ? 'bottom-0' : '-bottom-32']"
+    class="basis-1/3 rounded-t-3xl backdrop-brightness-95 backdrop-blur-2xl md:flex-row md:px-10 fixed inset-x-0 flex flex-col items-center justify-between h-32 mx-3 transition-all duration-500">
 
-    <div class="flex basis-1/3">
-      <img :src="musicStore.playingNow?.artwork" class="h-20 w-20 rounded-full object-cover"
+    <div class="basis-1/3 flex mt-2">
+      <img :src="musicStore.playingNow?.artwork" class="md:w-20 md:h-20 object-cover w-12 h-12 rounded-full"
         :alt="`${musicStore.playingNow?.title} + Image`">
-      <div class="flex justify-center flex-col ml-4">
+      <div class="flex flex-col justify-center ml-4">
         <div>
-          <div class="font-bold text-2xl"> {{ musicStore.playingNow?.title }} </div>
+          <div class="md:text-2xl text-xl font-bold"> {{ musicStore.playingNow?.title }} </div>
           <div> {{ musicStore.playingNow?.artist }}</div>
         </div>
       </div>
     </div>
 
-    <div class="basis-1/3  flex flex-col items-center">
+    <div class="basis-1/3 flex flex-col items-center">
       <div class="flex items-center gap-5">
         <div>{{ timeProgress }}</div>
 
-        <progress class=" progress progress-primary w-64" :value="progress" max="100"></progress>
+        <progress class=" progress progress-primary md:w-64 w-40" :value="progress" max="100"></progress>
 
         <div>{{ duration }}</div>
       </div>
 
-      <div class="flex ">
+      <div class="flex gap-10">
         <span class="cursor-pointer" @click="musicStore.previous">
-          <Arrow class="rotate-180 h-12 w-12" />
+          <Arrow class="w-12 h-12 rotate-180" />
         </span>
         <!-- <Stop class="w-12 h-12" /> -->
         <!-- <Pause class="w-12 h-12" /> -->
@@ -38,7 +38,7 @@
 
     </div>
 
-    <div class="basis-1/4 flex items-center gap-5">
+    <div class="basis-1/4 md:flex items-center hidden gap-5">
       <Volume />
       <input @input="() => musicStore.volume(volume)" v-model="volume" type="range" min="0.0" max="1.0" step=".01"
         class="range" />
@@ -50,11 +50,11 @@
 <script lang="ts" setup>
 
 
-import Arrow from './icons/arrow.vue';
-// import Pause from './icons/pause.vue';
-// import Play from './icons/play.vue';
-// import Stop from './icons/stop.vue';
-import Volume from './icons/volume.vue';
+import Arrow from '@/components/icons/arrow.vue';
+// import Pause from '@/components/icons/pause.vue';
+// import Play from '@/components/icons/play.vue';
+// import Stop from '@/components/icons/stop.vue';
+import Volume from '@/components/icons/volume.vue';
 
 if (window) {
   setInterval(c, 1000);
