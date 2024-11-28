@@ -13,7 +13,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description',
-          content: 'simple web site to listen music (University project)'
+          content: 'simple web site to listen music (University Project)'
         }
       ],
     }
