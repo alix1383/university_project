@@ -68,6 +68,10 @@ const duration = ref("00:00")
 
 function c() {
   const data = musicStore.getTime()
+  if (isNaN(data.duration)) {
+    data.duration = 0
+  }
+
   progress.value = calculatePercent(data.duration, data.currentTime);
   timeProgress.value = formatTime(String(data.currentTime))
   duration.value = formatTime(String(data.duration))

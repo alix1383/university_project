@@ -14,6 +14,7 @@ if (window) {
   audio.loop = false
 }
 
+
 export const useMusicStore = defineStore('Music', () => {
   const musicData = ref<MusicDataType[]>([])
   const playing = ref<boolean>(false)

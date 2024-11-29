@@ -6,17 +6,19 @@
     <div class="flex flex-col ml-4">
       <div>
         <div class="text-2xl font-bold">{{ title }}</div>
-        <div>{{ artist }}</div>
+        <NuxtLink :to="`/artist/${artist}`">
+          <div>{{ artist }}</div>
+        </NuxtLink>
       </div>
     </div>
 
     <div class="flex items-center ml-auto">
-
+      <!-- @vue-ignore -->
       <button @click="() => { musicStore.playing = true; musicStore.changeMusic(id); musicStore.playMusic() }"
         v-if="id != Number(musicStore.playingNow.id) || musicStore.playing == false" class="btn btn-circle btn-outline">
         <playIcon />
       </button>
-
+      <!-- @vue-ignore -->
       <button @click="() => { musicStore.playing = false; musicStore.pause() }"
         v-if="id == Number(musicStore.playingNow.id) && musicStore.playing == true" class="btn btn-circle btn-outline">
         <pauseIcon />

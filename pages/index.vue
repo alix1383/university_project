@@ -1,7 +1,9 @@
 <template>
-  <div class="flex flex-col gap-2 py-3">
-    <musicCard v-for="music in musics" :artist="music.artist" :artwork="music.artwork" :title="music.title"
-      :url="music.url" :id="Number(music.id)" />
+  <div class="bg-base-200 rounded-3xl px-3 transition-shadow shadow-lg">
+    <div class="flex flex-col gap-2 py-3">
+      <musicCard v-for="music in musicStore.musicData" :artist="music.artist" :artwork="music.artwork"
+        :title="music.title" :url="music.url" :id="Number(music.id)" />
+    </div>
   </div>
 
 </template>
@@ -9,21 +11,5 @@
 <script lang="ts" setup>
 import musicCard from "@/components/music_card.vue";
 
-type MusicDataType = {
-  "title": string,
-  "artist": string,
-  "artwork": string,
-  "url": string,
-  "id": string
-}
-
 const musicStore = useMusicStore();
-
-// Fetch Data From Github Repo
-const { data } = await useFetch('https://raw.githubusercontent.com/ShivamJoker/sample-songs/refs/heads/master/data.json')
-// Convert Json To Object
-const musics: MusicDataType[] = JSON.parse(data.value as string);
-
-musicStore.musicData = musics
-musicStore.playingNow = musicStore.musicData[0]
 </script>

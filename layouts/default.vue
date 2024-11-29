@@ -1,23 +1,32 @@
 <template>
-  <div>
-    <!-- Player most be render in Client side -->
-    <ClientOnly>
-      <Player />
-    </ClientOnly>
-    <!--  -->
+  <AppHeader />
 
-    <AppHeader />
+  <main class="mt-20 mb-32 inset-x-0 lg:mx-[calc(50%-490px)] xl:mx-[calc(50%-620px)] ">
+    <slot />
+  </main>
 
-    <main
-      class="mt-20 mb-32 shadow-lg  inset-x-0 rounded-3xl backdrop-blur-md  transition-all lg:mx-[calc(50%-490px)] xl:mx-[calc(50%-620px)] bg-base-200 px-3">
-      <slot />
-    </main>
-
-    <Navbar />
-  </div>
+  <Navbar />
 </template>
 
 <script lang="ts" setup>
+
 import AppHeader from "@/components/header/index.vue";
 import Navbar from "@/components/navbar/navbar.vue";
+
+type MusicDataType = {
+  "title": string,
+  "artist": string,
+  "artwork": string,
+  "url": string,
+  "id": string
+}
+
+// Fetch Data From Github Repo
+const { data } = await useFetch('https://raw.githubusercontent.com/alix1383/sample-songs/refs/heads/master/data.json')
+// Convert Json To Object
+const musics: MusicDataType[] = JSON.parse(data.value as string);
+const musicStore = useMusicStore()
+musicStore.musicData = musics
+musicStore.playingNow = musicStore.musicData[0]
+
 </script>

@@ -5,9 +5,13 @@
     <div class=" flex items-center justify-between h-16">
 
       <div class="flex gap-0.5 ">
-        <NuxtLink to="/login"> <button class="btn rounded-r-none">Login</button></NuxtLink>
+        <NuxtLink to="/login">
+          <button class="btn rounded-r-none">Login</button>
+        </NuxtLink>
 
-        <button class="btn btn-primary rounded-l-none">Sign in</button>
+        <NuxtLink to="/">
+          <button class="btn btn-primary rounded-l-none">Home</button>
+        </NuxtLink>
       </div>
       <div class="flex gap-4">
         <themeColor />
