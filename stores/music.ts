@@ -28,7 +28,7 @@ export const useMusicStore = defineStore('Music', () => {
 
   function playMusic() {
     if (audio.src != playingNow.value?.url) {
-      console.log(playingNow.value);
+
       if (playingNow.value?.url) {
         audio.src = playingNow.value?.url;
       }
@@ -46,7 +46,7 @@ export const useMusicStore = defineStore('Music', () => {
   }
 
   function next() {
-    console.log(musicData.value.length);
+
     if (musicData.value.length - Number(playingNow.value?.id) == 0) {
       playingNow.value = musicData.value[0]
     }
