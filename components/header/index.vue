@@ -1,15 +1,14 @@
 <template>
   <header
-    class="backdrop-brightness-125 shadow-lg top-0 z-10 fixed inset-x-0 rounded-b-3xl backdrop-blur-md  transition-all lg:mx-[calc(50%-490px)] xl:mx-[calc(50%-620px)]  px-5">
-
-    <div class=" flex items-center justify-between h-16">
-
-      <div class="flex gap-0.5 ">
+    class="fixed inset-x-0 top-0 z-10 rounded-b-3xl px-5 shadow-lg backdrop-blur-md backdrop-brightness-125 transition-all lg:mx-[calc(50%-490px)] xl:mx-[calc(50%-620px)]"
+  >
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex gap-0.5">
         <NuxtLink class="cursor-pointer-c" to="/login">
           <button class="btn rounded-r-none">Login</button>
         </NuxtLink>
 
-        <NuxtLink class="cursor-pointer-c" to="/">
+        <NuxtLink class="cursor-pointer" to="/">
           <button class="btn btn-primary rounded-l-none">Home</button>
         </NuxtLink>
       </div>
@@ -18,9 +17,7 @@
         <!-- <searchBar /> -->
       </div>
     </div>
-
   </header>
-
 </template>
 
 <script lang="ts" setup>
