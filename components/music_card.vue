@@ -1,13 +1,15 @@
 <template>
   <div
     class="rounded-3xl hover:shadow-none bg-base-100 flex items-center justify-start w-full h-24 px-4 transition-all shadow-md">
-    <img :src="artwork" class="h-14 w-14 object-cover rounded-full" alt="">
+    <img :src="artwork" class="h-14 w-14 object-cover rounded-full" :alt="`${artwork}-img`">
 
     <div class="flex flex-col ml-4">
       <div>
-        <div class="text-2xl font-bold">{{ title }}</div>
-        <NuxtLink :to="`/artist/${artist}`">
-          <div>{{ artist }}</div>
+        <NuxtLink :to="`/music/${id}`">
+          <div class="text-2xl font-bold cursor-pointer hover:text-info transition-colors">{{ title }}</div>
+        </NuxtLink>
+        <NuxtLink class="cursor-pointer" :to="`/artist/${artist}`">
+          <span class="hover:text-info transition-colors">{{ artist }}</span>
         </NuxtLink>
       </div>
     </div>

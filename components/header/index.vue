@@ -5,11 +5,11 @@
     <div class=" flex items-center justify-between h-16">
 
       <div class="flex gap-0.5 ">
-        <NuxtLink to="/login">
+        <NuxtLink class="cursor-pointer-c" to="/login">
           <button class="btn rounded-r-none">Login</button>
         </NuxtLink>
 
-        <NuxtLink to="/">
+        <NuxtLink class="cursor-pointer-c" to="/">
           <button class="btn btn-primary rounded-l-none">Home</button>
         </NuxtLink>
       </div>
