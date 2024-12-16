@@ -36,9 +36,7 @@
         <span class="cursor-pointer" @click="musicStore.previous">
           <Arrow class="h-12 w-12 rotate-180" />
         </span>
-        <!-- <Stop class="w-12 h-12" /> -->
-        <!-- <Pause class="w-12 h-12" /> -->
-        <!-- <play class="w-12 h-12" /> -->
+
         <span class="cursor-pointer" @click="musicStore.next">
           <Arrow class="h-12 w-12" />
         </span>
@@ -62,9 +60,7 @@
 
 <script lang="ts" setup>
 import Arrow from "@/components/icons/arrow.vue";
-// import Pause from '@/components/icons/pause.vue';
-// import Play from '@/components/icons/play.vue';
-// import Stop from '@/components/icons/stop.vue';
+
 import Volume from "@/components/icons/volume.vue";
 
 if (window) {
