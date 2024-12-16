@@ -1,5 +1,5 @@
 <template>
-  <div class="select-none">
+  <div class="font-saoSans select-none">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

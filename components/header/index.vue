@@ -12,7 +12,12 @@
           <button class="btn btn-primary rounded-l-none">Home</button>
         </NuxtLink>
       </div>
-      <div class="flex gap-4">
+      <div class="flex items-center gap-6">
+        <NuxtLink
+          class="link link-primary decoration-transparent"
+          to="/about_me"
+          >About Me</NuxtLink
+        >
         <themeColor />
         <!-- <searchBar /> -->
       </div>
