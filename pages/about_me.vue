@@ -1,9 +1,9 @@
 <template>
   <div class="container mx-auto p-8">
-    <div class="shadow-inline-xl card bg-base-100 text-2xl">
+    <div class="card bg-base-100 text-2xl shadow-inline-xl">
       <div class="card-body">
         <h2 class="card-title font-bold">About Me</h2>
-        <p>Hello! I'm Alix, a web developer.</p>
+        <p>Hello! I'm Alix.</p>
         <p>Feel free to connect with me:</p>
         <ul>
           <li>
